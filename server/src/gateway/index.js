@@ -7,7 +7,8 @@ require('dotenv-safe').config({
 
 const gateway = new ApolloGateway({
   serviceList: [
-    { name: 'users', url: `${process.env.USER_MANEMENT_URL}` },
+    { name: 'users', url: `${process.env.USER_MANAGEMENT_URL}` },
+    { name: 'inventory', url: `${process.env.IVENTORY_MANAGEMENT_URL}` },
   ],
 });
 

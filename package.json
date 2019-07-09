@@ -5,7 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server/src/services/userManagement/index.js",
+    "migrate:latest": "npx knex migrate:latest",
+    "migrate:up": "npx knex migrate:up",
+    "migrate:down": "npx knex migrate:down",
+    "start-user": "nodemon server/src/services/userManagement/index.js",
+    "start-inventory": "nodemon server/src/services/inventoryManagement/index.js",
     "main": "nodemon server/src/gateway/index.js",
     "lint": "eslint ./server/src"
   },
@@ -24,19 +28,21 @@
     "@apollo/federation": "^0.6.2",
     "@apollo/gateway": "^0.6.9",
     "apollo-server": "^2.6.2",
-    "dotenv-safe": "^6.1.0",
     "babel-polyfill": "^6.26.0",
     "babel-register": "^6.26.0",
+    "dotenv-safe": "^6.1.0",
     "graphql": "^14.3.0",
     "graphql-import": "^0.7.1",
     "graphql-tools": "^4.0.4",
     "jsonwebtoken": "^8.5.1",
+    "knex": "^0.18.3",
     "mongodb": "^3.2.7",
     "node-fetch": "^2.6.0",
     "nodemon": "^1.19.1",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
-    "validator": "^11.0.0"
+    "pg": "^7.11.0",
+    "validator": "^11.1.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
